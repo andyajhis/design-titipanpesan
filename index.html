@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link href="https://undangandigitalkami.com/themes/themes.css?v=290124" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .splide__andy {
+            background: white;
+            flex-wrap: nowrap;
+            width: 1250px;
+        }
+
+        .splide__pagination__page.is-active {
+            background: #fff;
+            transform: scale(1.4);
+            z-index: 1;
+            width: 20px;
+        }
+
+        .splide__pagination__page {
+            background: none;
+            border: 0;
+            border-radius: 50%;
+            display: inline-block;
+            /* height: 8px; */
+            margin: 3px;
+            opacity: .7;
+            padding: 0;
+            position: relative;
+            transition: transform .2s linear;
+            width: 8px;
+        }
+
+        .splide__pagination li {
+            display: inline-block;
+            line-height: 1;
+            list-style-type: none;
+            margin: 0;
+            pointer-events: auto;
+            align-items: center;
+            border: none !important;
+            color: var(--menu-inactive);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            text-align: center;
+            width: 125px;
+            height: 60px;
+        }
+
+        .splide:not(.is-overflow) .splide__list {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper mx-auto" style="max-width: 500px;overflow: hidden;">
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track w-100 bg-dark text-light">
+                <ul class="splide__list">
+                    <li class="splide__slide">Slide 01</li>
+                    <li class="splide__slide">Slide 02</li>
+                    <li class="splide__slide">Slide 03</li>
+                    <li class="splide__slide">Slide 04</li>
+                    <li class="splide__slide">Slide 05</li>
+                    <li class="splide__slide">Slide 06</li>
+                    <li class="splide__slide">Slide 07</li>
+                    <li class="splide__slide">Slide 08</li>
+                    <li class="splide__slide">Slide 09</li>
+                    <li class="splide__slide">Slide 10</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+
+        var splide = new Splide('.splide', {
+            direction: 'ltr',
+            height: '100vh',
+            wheel: true,
+            focus: 'center',
+            wheelSleep: 500,
+        });
+
+        splide.on('pagination:mounted', function (data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__andy');
+
+
+
+            splide.on('move', function (mv) {
+                // do something
+                console.log(mv);
+                if (mv == 0) {
+                    $('.splide__andy').css("left", "0px");
+                } else if (mv == 1) {
+                    $('.splide__andy').css("left", "0px");
+                } else if (mv == 2) {
+                    $('.splide__andy').css("left", "0px");
+                } else if (mv == 3) {
+                    $('.splide__andy').css("left", "-125px");
+                } else if (mv == 4) {
+                    $('.splide__andy').css("left", "-250px");
+                } else if (mv == 5) {
+                    $('.splide__andy').css("left", "-375px");
+                } else if (mv == 6) {
+                    $('.splide__andy').css("left", "-500px");
+                } else if (mv == 7) {
+                    $('.splide__andy').css("left", "-625px");
+                } else if (mv == 8) {
+                    $('.splide__andy').css("left", "-750px");
+                }
+            });
+
+
+            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i>');
+            $('[aria-controls="splide01-slide02"]').append('<i class="bi bi-chat-quote-fill"></i>');
+            $('[aria-controls="splide01-slide03"]').append('<i class="bi bi-chat-square-dots-fill"></i>');
+            $('[aria-controls="splide01-slide04"]').append('<i class="bi bi-arrow-through-heart-fill"></i>');
+            $('[aria-controls="splide01-slide05"]').append('<i class="bi bi-smartwatch"></i>');
+            $('[aria-controls="splide01-slide06"]').append('<i class="bi bi-geo-alt-fill"></i>');
+            $('[aria-controls="splide01-slide07"]').append('<i class="bi bi-images"></i>');
+            $('[aria-controls="splide01-slide08"]').append('<i class="bi bi-chat-dots-fill"></i>');
+            $('[aria-controls="splide01-slide09"]').append('<i class="bi bi-gift-fill"></i>');
+            $('[aria-controls="splide01-slide10"]').append('<i class="bi bi-info-circle-fill"></i>');
+
+        });
+
+
+
+
+
+
+        splide.mount();
+    </script>
+</body>
+
+</html>
