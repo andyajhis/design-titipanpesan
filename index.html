@@ -55,21 +55,29 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-bottom: 8px;
-            padding-top: 8px;
+            padding-bottom: 0px;
+            padding-top: 0px;
             text-align: center;
             width: 125px;
-            height: 60px;
+            height: auto;
         }
 
         .splide:not(.is-overflow) .splide__list {
             justify-content: center;
+        }
+
+        li:has(> button.is-active) {
+            background: lightseagreen;
+        }
+        .splide__pagination__page.is-active{
+            background: none;
         }
     </style>
 </head>
 
 <body>
     <div class="wrapper mx-auto" style="max-width: 500px;overflow: hidden;">
+        <ul class="splide__pagination"></ul>
         <section class="splide" aria-label="Splide Basic HTML Example">
             <div class="splide__track w-100 bg-dark text-light">
                 <ul class="splide__list">
@@ -86,6 +94,7 @@
                 </ul>
             </div>
         </section>
+
     </div>
 
 
@@ -115,6 +124,13 @@
 
             splide.on('move', function (mv) {
                 // do something
+                var w = window.innerWidth;
+                if (w > 500) {
+                    w = 500;
+                }
+
+                var wx = w / 4;
+
                 console.log(mv);
                 if (mv == 0) {
                     $('.splide__andy').css("left", "0px");
@@ -123,22 +139,22 @@
                 } else if (mv == 2) {
                     $('.splide__andy').css("left", "0px");
                 } else if (mv == 3) {
-                    $('.splide__andy').css("left", "-125px");
+                    $('.splide__andy').css("left", "-" + wx + "px");
                 } else if (mv == 4) {
-                    $('.splide__andy').css("left", "-250px");
+                    $('.splide__andy').css("left", "-" + (wx * 2) + "px");
                 } else if (mv == 5) {
-                    $('.splide__andy').css("left", "-375px");
+                    $('.splide__andy').css("left", "-" + (wx * 3) + "px");
                 } else if (mv == 6) {
-                    $('.splide__andy').css("left", "-500px");
+                    $('.splide__andy').css("left", "-" + (wx * 4) + "px");
                 } else if (mv == 7) {
-                    $('.splide__andy').css("left", "-625px");
+                    $('.splide__andy').css("left", "-" + (wx * 5) + "px");
                 } else if (mv == 8) {
-                    $('.splide__andy').css("left", "-750px");
+                    $('.splide__andy').css("left", "-" + (wx * 6) + "px");
                 }
             });
 
 
-            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i>');
+            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i><p class="small">Pesan</p>');
             $('[aria-controls="splide01-slide02"]').append('<i class="bi bi-chat-quote-fill"></i>');
             $('[aria-controls="splide01-slide03"]').append('<i class="bi bi-chat-square-dots-fill"></i>');
             $('[aria-controls="splide01-slide04"]').append('<i class="bi bi-arrow-through-heart-fill"></i>');
@@ -149,6 +165,11 @@
             $('[aria-controls="splide01-slide09"]').append('<i class="bi bi-gift-fill"></i>');
             $('[aria-controls="splide01-slide10"]').append('<i class="bi bi-info-circle-fill"></i>');
 
+            //$( ".splide__andy" ).before( "<div>" );
+            //$( ".splide__andy" ).after( "</div>" );
+
+
+
         });
 
 
@@ -157,6 +178,17 @@
 
 
         splide.mount();
+    </script>
+
+    <script>
+        var w = window.innerWidth;
+        if (w > 500) {
+            w = 500;
+        }
+        var wx = w / 4;
+        $(".splide__pagination li").css("width", wx + "px");
+        $(".splide__andy").css("width", (wx * 10) + "px");
+
     </script>
 </body>
 
