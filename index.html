@@ -11,6 +11,12 @@
     <link href="https://undangandigitalkami.com/themes/themes.css?v=290124" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&family=MonteCarlo&family=Vidaloka&display=swap"
+        rel="stylesheet">
     <style>
         body {
             overflow: hidden;
@@ -114,19 +120,68 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: calc(100vh - 70px);
+            position: relative;
             background: #f1ebe2;
             color: black;
         }
 
-        .openning{
-            
+        .title_opening {
+            font-family: "Vidaloka", serif;
+            color: #1F3D28;
         }
 
         .gambar_opening {
             aspect-ratio: 1 / 1;
             background-image: url(https://undangandigitalkami.com/themes/leaves-design/circle.png);
             background-size: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .namapasangan_opening,
+        .and_openning {
+            font-family: "MonteCarlo", cursive;
+
+        }
+
+        .namapasangan_opening {
+            font-size: 60px;
+        }
+
+
+        .frame,
+        .frame-tl {
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .frame-tr {
+            right: 0;
+            top: 0;
+        }
+
+        .frame-bl {
+            bottom: 0;
+            left: 0;
+        }
+
+        .frame-br {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+        }
+
+        .kpd_opening,
+        .tamu_opening {
+            font-family: "Gabriela", serif;
+        }
+
+        .tamu_opening {
+            color: #B68F58;
         }
     </style>
 </head>
@@ -141,16 +196,29 @@
 
                         <section class="tengahlayar">
                             <div class="openning text-center">
-                                <h1 class="h3">Wedding Invitation</h1>
-                                <div class="gambar_opening p-5">
-                                    <h2 class="m-0">SALSA</h2>
-                                    <div class="opening_and">and</div>
-                                    <h2 class="m-0">ANKA</h2>
+                                <div class="frame">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                        class="frame-tl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                        class="frame-tr">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                        class="frame-bl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                        class="frame-br">
                                 </div>
-                                <p class="mt-2 mb-0">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
-                                <h3>Nama Tamu</h3>
 
-                                <button class="btn btn-light mt-5">Open Invitation</button>
+                                <h1 class="h4 title_opening">Wedding Invitation</h1>
+                                <div class="gambar_opening p-5 text-light">
+                                    <div class="box">
+                                        <h2 class="m-0 namapasangan_opening">Salsa</h2>
+                                        <h3 class="and_openning">and</h3>
+                                        <h2 class="m-0 namapasangan_opening">Anka</h2>
+                                    </div>
+                                </div>
+                                <p class="mt-1 mb-0 kpd_opening">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+                                <h5 class="tamu_opening"><strong>Nama Tamu</strong></h5>
+
+                                <button class="btn btn-light mt-3">Open Invitation</button>
                             </div>
                         </section>
 
@@ -181,6 +249,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
 
+        var w = window.innerWidth;
+        if (w > 500) {
+            w = 500;
+        }
+        var gbr_opening = w * 0.8;
+        console.log(gbr_opening);
+        $('.gambar_opening').css("width", gbr_opening + "px");
+
         var splide = new Splide('.splide', {
             direction: 'ttb',
             height: '100vh',
@@ -202,6 +278,7 @@
                 if (w > 500) {
                     w = 500;
                 }
+
 
                 var wx = w / 4;
 
