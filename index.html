@@ -108,16 +108,53 @@
         .splide__pagination__page.is-active {
             background: none;
         }
+
+        .tengahlayar {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f1ebe2;
+            color: black;
+        }
+
+        .openning{
+            
+        }
+
+        .gambar_opening {
+            aspect-ratio: 1 / 1;
+            background-image: url(https://undangandigitalkami.com/themes/leaves-design/circle.png);
+            background-size: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div class="wrapper mx-auto" style="max-width: 500px;overflow: hidden;">
-        <ul class="splide__pagination"></ul>
+
         <section class="splide" aria-label="Splide Basic HTML Example">
             <div class="splide__track w-100 bg-dark text-light">
                 <ul class="splide__list">
-                    <li class="splide__slide">Slide 01</li>
+                    <li class="splide__slide">
+
+                        <section class="tengahlayar">
+                            <div class="openning text-center">
+                                <h1 class="h3">Wedding Invitation</h1>
+                                <div class="gambar_opening p-5">
+                                    <h2 class="m-0">SALSA</h2>
+                                    <div class="opening_and">and</div>
+                                    <h2 class="m-0">ANKA</h2>
+                                </div>
+                                <p class="mt-2 mb-0">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+                                <h3>Nama Tamu</h3>
+
+                                <button class="btn btn-light mt-5">Open Invitation</button>
+                            </div>
+                        </section>
+
+                    </li>
                     <li class="splide__slide">Slide 02</li>
                     <li class="splide__slide">Slide 03</li>
                     <li class="splide__slide">Slide 04</li>
@@ -149,6 +186,7 @@
             height: '100vh',
             wheel: true,
             focus: 'center',
+            scroll: true,
             wheelSleep: 500,
         });
 
