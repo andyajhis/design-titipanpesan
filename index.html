@@ -16,10 +16,43 @@
             overflow: hidden;
         }
 
+
+
         .splide__andy {
             background: white;
             flex-wrap: nowrap;
             width: 1250px;
+            padding: 0 !important;
+        }
+
+        .splide__pagination--ttb {
+            bottom: 0;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: unset;
+            flex-direction: unset;
+            left: 0;
+            padding: 1em 0;
+            right: 0.5em;
+            top: inherit;
+        }
+
+        .splide__pagination__page {
+            width: fit-content;
+
+        }
+
+        button.splide__pagination__page,
+        button.splide__pagination__page.is-active {
+            width: auto;
+            padding: 20px 10px;
+            margin: 0;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        button.splide__pagination__page.is-active {
+            color: white;
         }
 
         .splide__pagination__page.is-active {
@@ -34,7 +67,7 @@
             border: 0;
             border-radius: 50%;
             display: inline-block;
-            /* height: 8px; */
+            height: auto;
             margin: 3px;
             opacity: .7;
             padding: 0;
@@ -62,6 +95,8 @@
             height: auto;
         }
 
+
+
         .splide:not(.is-overflow) .splide__list {
             justify-content: center;
         }
@@ -69,7 +104,8 @@
         li:has(> button.is-active) {
             background: lightseagreen;
         }
-        .splide__pagination__page.is-active{
+
+        .splide__pagination__page.is-active {
             background: none;
         }
     </style>
@@ -109,7 +145,7 @@
     <script>
 
         var splide = new Splide('.splide', {
-            direction: 'ltr',
+            direction: 'ttb',
             height: '100vh',
             wheel: true,
             focus: 'center',
@@ -154,16 +190,16 @@
             });
 
 
-            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i><p class="small">Pesan</p>');
-            $('[aria-controls="splide01-slide02"]').append('<i class="bi bi-chat-quote-fill"></i>');
-            $('[aria-controls="splide01-slide03"]').append('<i class="bi bi-chat-square-dots-fill"></i>');
-            $('[aria-controls="splide01-slide04"]').append('<i class="bi bi-arrow-through-heart-fill"></i>');
-            $('[aria-controls="splide01-slide05"]').append('<i class="bi bi-smartwatch"></i>');
-            $('[aria-controls="splide01-slide06"]').append('<i class="bi bi-geo-alt-fill"></i>');
-            $('[aria-controls="splide01-slide07"]').append('<i class="bi bi-images"></i>');
-            $('[aria-controls="splide01-slide08"]').append('<i class="bi bi-chat-dots-fill"></i>');
-            $('[aria-controls="splide01-slide09"]').append('<i class="bi bi-gift-fill"></i>');
-            $('[aria-controls="splide01-slide10"]').append('<i class="bi bi-info-circle-fill"></i>');
+            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i><p class="small mb-0">opening</p>');
+            $('[aria-controls="splide01-slide02"]').append('<i class="bi bi-chat-quote-fill"></i><p class="small mb-0">quotes</p>');
+            $('[aria-controls="splide01-slide03"]').append('<i class="bi bi-chat-square-dots-fill"></i><p class="small mb-0">salam</p>');
+            $('[aria-controls="splide01-slide04"]').append('<i class="bi bi-arrow-through-heart-fill"></i><p class="small mb-0">mempelai</p>');
+            $('[aria-controls="splide01-slide05"]').append('<i class="bi bi-smartwatch"><p class="small mb-0">acara</p></i>');
+            $('[aria-controls="splide01-slide06"]').append('<i class="bi bi-geo-alt-fill"></i><p class="small mb-0">maps</p>');
+            $('[aria-controls="splide01-slide07"]').append('<i class="bi bi-images"></i><p class="small mb-0">gallery</p>');
+            $('[aria-controls="splide01-slide08"]').append('<i class="bi bi-chat-dots-fill"></i><p class="small mb-0">rsvp</p>');
+            $('[aria-controls="splide01-slide09"]').append('<i class="bi bi-gift-fill"></i><p class="small mb-0">gift</p>');
+            $('[aria-controls="splide01-slide10"]').append('<i class="bi bi-info-circle-fill"></i><p class="small mb-0">thanks</p>');
 
             //$( ".splide__andy" ).before( "<div>" );
             //$( ".splide__andy" ).after( "</div>" );
