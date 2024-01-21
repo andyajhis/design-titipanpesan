@@ -162,7 +162,8 @@
 
         /* Quotes */
 
-        p.quotes, div.sallam {
+        p.quotes,
+        div.sallam {
             font-family: "Gabriela", serif;
             color: #1F3D28;
             font-size: 14px;
@@ -211,6 +212,14 @@
         .tamu_opening {
             color: #B68F58;
         }
+
+        .hidden{
+            display: none;
+        }
+
+        .show{
+            display: flex;
+        }
     </style>
 </head>
 
@@ -222,7 +231,7 @@
                 <ul class="splide__list">
                     <li class="splide__slide">
 
-                        <section class="tengahlayar">
+                        <section class="tengahlayar hidden">
                             <div class="openning text-center">
                                 <div class="frame">
                                     <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
@@ -253,7 +262,7 @@
                     </li>
                     <li class="splide__slide">
 
-                        <section class="tengahlayar">
+                        <section class="tengahlayar hidden">
                             <div class="quotes text-center">
                                 <div class="frame">
                                     <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
@@ -291,7 +300,7 @@
                     </li>
                     <li class="splide__slide">
 
-                        <section class="tengahlayar">
+                        <section class="tengahlayar hidden">
                             <div class="sallam text-center">
                                 <div class="frame">
                                     <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
@@ -362,6 +371,50 @@
             focus: 'center',
             scroll: true,
             wheelSleep: 0,
+        });
+
+        splide.on('active', function (e) {
+            const layar = document.querySelectorAll('.tengahlayar');
+            layar[e.index].classList.add('show');
+            layar[e.index].classList.remove('hidden');
+
+            const ftl = document.querySelectorAll('.frame-tl');
+            ftl[e.index].classList.add('animate__animated', 'animate__fadeInTopLeft');
+
+            const ftr = document.querySelectorAll('.frame-tr');
+            ftr[e.index].classList.add('animate__animated', 'animate__fadeInTopRight');
+
+            const fbl = document.querySelectorAll('.frame-bl');
+            fbl[e.index].classList.add('animate__animated', 'animate__fadeInBottomLeft');
+
+            const fbr = document.querySelectorAll('.frame-br');
+            fbr[e.index].classList.add('animate__animated', 'animate__fadeInBottomRight');
+
+            const gbrOpening = document.querySelectorAll('.gambar_opening');
+            gbrOpening[e.index].classList.add('animate__animated', 'animate__zoomIn');
+
+        });
+
+        splide.on('inactive', function (e) {
+            const layar = document.querySelectorAll('.tengahlayar');
+            layar[e.index].classList.add('hidden');
+            layar[e.index].classList.remove('show');
+
+            const ftl = document.querySelectorAll('.frame-tl');
+            ftl[e.index].classList.remove('animate__animated', 'animate__fadeInTopLeft');
+
+            const ftr = document.querySelectorAll('.frame-tr');
+            ftr[e.index].classList.remove('animate__animated', 'animate__fadeInTopRight');
+
+            const fbl = document.querySelectorAll('.frame-bl');
+            fbl[e.index].classList.remove('animate__animated', 'animate__fadeInBottomLeft');
+
+            const fbr = document.querySelectorAll('.frame-br');
+            fbr[e.index].classList.remove('animate__animated', 'animate__fadeInBottomRight');
+
+            const gbrOpening = document.querySelectorAll('.gambar_opening');
+            gbrOpening[e.index].classList.remove('animate__animated', 'animate__zoomIn');
+            
         });
 
         splide.on('pagination:mounted', function (data) {
