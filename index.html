@@ -11,19 +11,59 @@
     <link href="https://undangandigitalkami.com/themes/themes.css?v=290124" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabriela&family=Mr+Dafoe&family=MonteCarlo&family=Vidaloka&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         body {
             overflow: hidden;
         }
 
+
+
         .splide__andy {
             background: white;
             flex-wrap: nowrap;
             width: 1250px;
+            padding: 0 !important;
+            transition: 1s;
+        }
+
+        .splide__pagination--ttb {
+            bottom: 0;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: unset;
+            flex-direction: unset;
+            left: 0;
+            padding: 1em 0;
+            right: 0.5em;
+            top: inherit;
+        }
+
+        .splide__pagination__page {
+            width: fit-content;
+
+        }
+
+        button.splide__pagination__page,
+        button.splide__pagination__page.is-active {
+            width: auto;
+            padding: 20px 10px;
+            margin: 0;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        button.splide__pagination__page.is-active {
+            color: #ffffff;
         }
 
         .splide__pagination__page.is-active {
-            background: #fff;
+            background: #ffffff;
             transform: scale(1.4);
             z-index: 1;
             width: 20px;
@@ -34,7 +74,7 @@
             border: 0;
             border-radius: 50%;
             display: inline-block;
-            /* height: 8px; */
+            height: auto;
             margin: 3px;
             opacity: .7;
             padding: 0;
@@ -62,6 +102,8 @@
             height: auto;
         }
 
+
+
         .splide:not(.is-overflow) .splide__list {
             justify-content: center;
         }
@@ -69,28 +111,539 @@
         li:has(> button.is-active) {
             background: lightseagreen;
         }
-        .splide__pagination__page.is-active{
+
+        .splide__pagination__page.is-active {
             background: none;
+        }
+
+        li.splide__slide {
+            background: #f1ebe2;
+
+        }
+
+        .tengahlayar {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 70px);
+            position: relative;
+            background: #f1ebe2;
+            color: black;
+        }
+
+        /* Opening */
+
+        .title_opening {
+            font-family: "Vidaloka", serif;
+            color: #1F3D28;
+        }
+
+        .gambar_opening {
+            aspect-ratio: 1 / 1;
+            background-image: url(https://undangandigitalkami.com/themes/leaves-design/circle.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .namapasangan_opening,
+        .and_openning {
+            font-family: "MonteCarlo", cursive;
+
+        }
+
+        .namapasangan_opening {
+            font-size: 60px;
+        }
+
+        /* Quotes */
+
+        p.quotes,
+        div.sallam {
+            font-family: "Gabriela", serif;
+            color: #1F3D28;
+            font-size: 14px;
+        }
+
+        div.menyatu {
+            font-size: 128px;
+            letter-spacing: -36px;
+            margin-left: -36px;
+            font-family: "Vidaloka", serif;
+            color: #B68F58;
+            margin-bottom: -20px;
+        }
+
+        /* Mempelai */
+        .nama_mempelai {
+            font-family: "MonteCarlo", cursive;
+            color: #B68F58;
+        }
+
+        .nama_ortu {
+            font-family: "Gabriela", serif;
+            font-size: 14.4px;
+            color: #1F3D28;
+        }
+
+        .denganMempelai {
+            font-size: 20px;
+            font-family: "Mr Dafoe", cursive;
+            line-height: 1.6 !important;
+            color: #1F3D28;
+        }
+
+        /* thanks */
+
+        p.thanks {
+            font-family: "Gabriela", serif;
+            color: #1F3D28;
+            font-size: 14px;
+        }
+
+        p.thanks2 {
+            font-family: "Mr Dafoe", cursive;
+            line-height: 1.6 !important;
+            color: #1F3D28;
+            font-size: 16px;
+        }
+
+        /* acara */
+
+        p.acara {
+            font-family: "Mr Dafoe", cursive;
+            color: #1F3D28;
+            font-size: 14px;
+        }
+
+        p.acara2 {
+            font-family: "Gabriela", serif;
+            font-size: 12px;
+            color: #1F3D28;
+            line-height: 1.6 !important;
+        }
+
+        p.waktuacara {
+            font-family: "Vidaloka", serif;
+            font-size: 14px;
+            color: #1F3D28;
+        }
+
+        p.waktuacara2 {
+            font-size: 60px;
+            line-height: 1;
+            font-family: "Gabriela", serif;
+            color: #1F3D28;
+        }
+
+        p.waktuacara3 {
+            font-size: 14px;
+            color: #1F3D28;
+            font-family: "Gabriela", serif;
+        }
+
+        p.detailacara,
+        p.detailacara2,
+        p.detailacara3 {
+            font-family: "Gabriela", serif;
+            font-size: 12px;
+            color: #1F3D28;
+        }
+
+        p.detailacara2 {
+            font-size: 14.4px;
+        }
+
+        p.detailacara3 {
+            font-size: 12px;
+        }
+
+        div.cd {
+            margin-right: 2px;
+            margin-left: 2px;
+            border-radius: 10px;
+            background: #1F3D28;
+            padding: 15px 20px;
+            color: #ffffff;
+            font-family: "Poppins", Sans-serif;
+            font-size: 12px;
+        }
+
+        /* Maps */
+
+        div.maps {
+            z-index: 1;
+        }
+
+        /* Gift */
+
+        p.gift{
+            font-size: 28.8px;
+            font-family: "MonteCarlo", cursive;
+            color: #B68F58;
+        }
+
+        p.gift2{
+            font-size: 14.4px;
+            font-family: "Gabriela", serif;
+            color: #1F3D28;
+        }
+
+
+
+
+        .frame,
+        .frame-tl {
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .frame-tr {
+            right: 0;
+            top: 0;
+        }
+
+        .frame-bl {
+            bottom: 0;
+            left: 0;
+        }
+
+        .frame-br {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+        }
+
+        .kpd_opening,
+        .tamu_opening {
+            font-family: "Gabriela", serif;
+        }
+
+        .tamu_opening {
+            color: #B68F58;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: flex;
         }
     </style>
 </head>
 
 <body>
     <div class="wrapper mx-auto" style="max-width: 500px;overflow: hidden;">
-        <ul class="splide__pagination"></ul>
+
         <section class="splide" aria-label="Splide Basic HTML Example">
             <div class="splide__track w-100 bg-dark text-light">
                 <ul class="splide__list">
-                    <li class="splide__slide">Slide 01</li>
-                    <li class="splide__slide">Slide 02</li>
-                    <li class="splide__slide">Slide 03</li>
-                    <li class="splide__slide">Slide 04</li>
-                    <li class="splide__slide">Slide 05</li>
-                    <li class="splide__slide">Slide 06</li>
-                    <li class="splide__slide">Slide 07</li>
-                    <li class="splide__slide">Slide 08</li>
-                    <li class="splide__slide">Slide 09</li>
-                    <li class="splide__slide">Slide 10</li>
+                    <li class="splide__slide">
+
+                        <section class="tengahlayar hidden">
+                            <div class="openning text-center">
+                                <div class="frame">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                        class="frame-tl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                        class="frame-tr">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                        class="frame-bl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                        class="frame-br">
+                                </div>
+
+                                <h1 class="h4 title_opening slideDown">Wedding Invitation</h1>
+                                <div class="gambar_opening p-5 text-light slideZoom">
+                                    <div class="box">
+                                        <h2 class="m-0 namapasangan_opening">Salsa</h2>
+                                        <h3 class="m-0 and_openning">and</h3>
+                                        <h2 class="m-0 namapasangan_opening">Anka</h2>
+                                    </div>
+                                </div>
+                                <p class="mt-1 mb-0 kpd_opening slideUp">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+                                <h5 class="tamu_opening slideUp"><strong>Namu Tamu</strong></h5>
+
+                                <button
+                                    class="btn btn-light mt-3 animate__animated animate__infinite infinite animate__pulse">Open
+                                    Invitation <i class="bi bi-chevron-down"></i></button>
+                            </div>
+                        </section>
+
+                    </li>
+                    <li class="splide__slide">
+
+                        <section class="tengahlayar hidden">
+                            <div class="quotes text-center">
+                                <div class="frame">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                        class="frame-tl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                        class="frame-tr">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                        class="frame-bl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                        class="frame-br">
+                                </div>
+
+                                <div class="container px-3">
+                                    <div class="menyatu slideZoom">SA</div>
+                                    <p class="slideDown">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ
+                                        اَزْوَاجًا لِّتَسْكُنُوْٓا
+                                        اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ
+                                        لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
+                                    <p class="quotes font-italic slideDown">Dan di antara tanda-tanda (kebesaran)-Nya
+                                        ialah Dia
+                                        menciptakan pasangan-pasangan
+                                        untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+                                        dan
+                                        Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian
+                                        itu
+                                        benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+                                        <br /><br /> (QS. Ar-Ruum 30 : 21)
+                                    </p>
+                                </div>
+
+
+
+
+                            </div>
+                        </section>
+
+                    </li>
+                    <li class="splide__slide">
+
+                        <section class="tengahlayar hidden">
+                            <div class="container sallam text-center">
+                                <div class="frame">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                        class="frame-tl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                        class="frame-tr">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                        class="frame-bl">
+                                    <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                        class="frame-br">
+                                </div>
+
+                                <div class="gambar_opening p-5 text-light mx-auto slideZoom">
+                                    <div class="box">
+                                        <div class="menyatu text-light">SA</div>
+                                        <p class="slideDown">26 . 11 . 2023</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="sallam font-italic slideUp">
+                                    <p>Assalamu'alaikum Wr Wb</p>
+                                    <p>Maha Suci Allah SWT, yang telah menciptakan mahkluk-Nya berpasang - pasangan.
+                                        Ya Allah, ijinkanlah kami menikahkan putra - putri kami :</p>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+                            <div class="container mempelai mx-auto text-center">
+                                <img src="https://assets.satumomen.com/images/galleries/23358-gallery-1666958913.jpg"
+                                    class="w-75 rounded-circle slideZoom" style="max-width: 120px;">
+
+                                <h3 class="nama_mempelai mt-3 slideDown">Salsabila Athika Ramadhani, S.Kom.</h3>
+                                <p class="nama_ortu slideUp">Putri pertama dari<br>Bpk. dr. Deddy
+                                    Rasyidan Yulizar, Sp.U(K)<br>& Ibu drh. Lisa Nuzul Sofiany</p>
+
+                                <div class="denganMempelai slideZoom">dengan</div>
+
+                                <h3 class="nama_mempelai mt-3 slideDown">Arka Fadila Yasa, S.Kom.</h3>
+                                <p class="nama_ortu slideUp">Putri pertama dari<br>Bpk. dr. Deddy
+                                    Bpk. Kayadi, SE & Ibu Indiah Murti</p>
+
+                                <img src="https://assets.satumomen.com/images/galleries/23358-gallery-1666958993.jpg"
+                                    class="w-75 rounded-circle slideZoom" style="max-width: 120px;">
+                            </div>
+
+
+                        </section>
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+                            <div class="acara container mx-auto text-center">
+                                <p class="acara slideDown">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                                <p class="acara2 slideUp">Dengan memohon rahmat dan ridho Allah SWT, kami mengharap
+                                    kehadiran
+                                    Bapak / Ibu /
+                                    Saudara / i pada acara resepsi pernikahan putra-putri kami</p>
+
+                                <div class="row mx-auto slideZoom">
+                                    <div class="col-4 px-0">
+                                        <p class="waktuacara my-0">MINGGU/AHAD</p>
+                                        <p class="waktuacara2 my-0 font-weight-bold">26</p>
+                                        <p class="waktuacara3 my-0">NOVEMBER<br />2024</p>
+                                    </div>
+                                    <div class="col-8 px-0" style="border-left: 1px solid #1F3D28">
+                                        <p class="detailacara mb-1"><b>AKAD NIKAH : 08.00 WITA<br />
+                                                RESEPSI : 10.00 - 14.00 WITA</b></p>
+                                        <p class="detailacara2 my-0"><strong>CALAMUS BALLROOM</strong></p>
+                                        <p class="detailacara3">Hotel Rattan Inn Banjarmasin<br />Jl. Ahmad Yani KM
+                                            5.7,
+                                            Banjarmasin</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row justify-content-center mt-3 slideUp">
+                                    <div class="cd"><span class="d-block time" id="days">00</span><span
+                                            class="d-block">Hari</span></div>
+                                    <div class="cd"><span class="d-block time" id="hours">00</span><span
+                                            class="d-block">Jam</span></div>
+                                    <div class="cd"><span class="d-block time" id="minutes">00</span><span
+                                            class="d-block">Menit</span></div>
+                                    <div class="cd"><span class="d-block time" id="seconds">00</span><span
+                                            class="d-block">Detik</span></div>
+                                </div>
+                            </div>
+
+
+                        </section>
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+                            <div class="maps container mx-auto text-center">
+
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3983.011645653737!2d114.61935817497204!3d-3.347266796627466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMjAnNTAuMiJTIDExNMKwMzcnMTkuMCJF!5e0!3m2!1sid!2sid!4v1705837693445!5m2!1sid!2sid"
+                                    width="90%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade" class="slideDown"></iframe>
+
+                                <p class="maps my-0 slideUp"><strong>CALAMUS BALLROOM</strong></p>
+                                <p class="maps2 slideUp">Hotel Rattan Inn Banjarmasin<br />Jl. Ahmad Yani KM
+                                    5.7,
+                                    Banjarmasin</p>
+                                <button
+                                    class="btn btn-light mt-3 animate__animated animate__infinite infinite animate__pulse">Petunjuk
+                                    ke Lokasi <i class="bi bi-chevron-right"></i></button>
+                            </div>
+
+
+                        </section>
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+
+                        </section>
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+
+                        </section>
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+                            <div class="container gift mx-auto text-center">
+                                <p class="gift slideDown">Tanda Kasih</p>
+                                <p class="gift2 slideUp">Terima kasih telah menambah semangat kegembiraan pernikahan kami dengan kehadiran dan hadiah indah Anda.</p>
+                            </div>
+
+                        </section>
+                    </li>
+                    <li class="splide__slide">
+                        <section class="tengahlayar hidden">
+                            <div class="frame">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tl.png"
+                                    class="frame-tl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-tr.png"
+                                    class="frame-tr">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-bl.png"
+                                    class="frame-bl">
+                                <img src="https://undangandigitalkami.com/themes/leaves-design/frame-br.png"
+                                    class="frame-br">
+                            </div>
+
+                            <div class="container px-3 thanks text-center">
+                                <p class="thanks slideDown">Merupakan suatu kebahagiaan dan kehormatan bagi kami,
+                                    apabila
+                                    Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kedua mempelai.
+                                </p>
+                                <p class="thanks2 slideUp">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                            </div>
+
+
+                        </section>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -108,12 +661,107 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
 
+        var w = window.innerWidth;
+        if (w > 500) {
+            w = 500;
+        }
+        var gbr_opening = w * 0.8;
+        $('.gambar_opening').css("width", gbr_opening + "px");
+
         var splide = new Splide('.splide', {
             direction: 'ttb',
             height: '100vh',
             wheel: true,
             focus: 'center',
-            wheelSleep: 500,
+            scroll: true,
+            wheelSleep: 0,
+        });
+
+        splide.on('active', function (e) {
+            const layar = document.querySelectorAll('.tengahlayar');
+            layar[e.index].classList.add('show');
+            layar[e.index].classList.remove('hidden');
+
+            const ftl = document.querySelectorAll('.frame-tl');
+            ftl[e.index].classList.add('animate__animated', 'animate__fadeInTopLeft');
+
+            const ftr = document.querySelectorAll('.frame-tr');
+            ftr[e.index].classList.add('animate__animated', 'animate__fadeInTopRight');
+
+            const fbl = document.querySelectorAll('.frame-bl');
+            fbl[e.index].classList.add('animate__animated', 'animate__fadeInBottomLeft');
+
+            const fbr = document.querySelectorAll('.frame-br');
+            fbr[e.index].classList.add('animate__animated', 'animate__fadeInBottomRight');
+
+            // SlideUp
+            var slideUp = document.querySelectorAll(".slideUp");
+            for (var i = 0; i < slideUp.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = slideUp[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    slideUp[i].classList.add('animate__animated', 'animate__slideInUp');
+                } else {
+                    slideUp[i].classList.remove('animate__animated', 'animate__slideInUp');
+                }
+            }
+
+            // SlideDown
+            var slideDown = document.querySelectorAll(".slideDown");
+            for (var i = 0; i < slideDown.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = slideDown[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    slideDown[i].classList.add('animate__animated', 'animate__slideInDown');
+                } else {
+                    slideDown[i].classList.remove('animate__animated', 'animate__slideInDown');
+                }
+            }
+
+            // SlideZoom
+            var slideZoom = document.querySelectorAll(".slideZoom");
+            for (var i = 0; i < slideZoom.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = slideZoom[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    slideZoom[i].classList.add('animate__animated', 'animate__zoomIn');
+                } else {
+                    slideZoom[i].classList.remove('animate__animated', 'animate__zoomIn');
+                }
+            }
+
+
+
+
+        });
+
+        splide.on('inactive', function (e) {
+            const layar = document.querySelectorAll('.tengahlayar');
+            layar[e.index].classList.add('hidden');
+            layar[e.index].classList.remove('show');
+
+            const ftl = document.querySelectorAll('.frame-tl');
+            ftl[e.index].classList.remove('animate__animated', 'animate__fadeInTopLeft');
+
+            const ftr = document.querySelectorAll('.frame-tr');
+            ftr[e.index].classList.remove('animate__animated', 'animate__fadeInTopRight');
+
+            const fbl = document.querySelectorAll('.frame-bl');
+            fbl[e.index].classList.remove('animate__animated', 'animate__fadeInBottomLeft');
+
+            const fbr = document.querySelectorAll('.frame-br');
+            fbr[e.index].classList.remove('animate__animated', 'animate__fadeInBottomRight');
+
+
+
+
+
         });
 
         splide.on('pagination:mounted', function (data) {
@@ -129,9 +777,9 @@
                     w = 500;
                 }
 
+
                 var wx = w / 4;
 
-                console.log(mv);
                 if (mv == 0) {
                     $('.splide__andy').css("left", "0px");
                 } else if (mv == 1) {
@@ -154,16 +802,16 @@
             });
 
 
-            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i><p class="small">Pesan</p>');
-            $('[aria-controls="splide01-slide02"]').append('<i class="bi bi-chat-quote-fill"></i>');
-            $('[aria-controls="splide01-slide03"]').append('<i class="bi bi-chat-square-dots-fill"></i>');
-            $('[aria-controls="splide01-slide04"]').append('<i class="bi bi-arrow-through-heart-fill"></i>');
-            $('[aria-controls="splide01-slide05"]').append('<i class="bi bi-smartwatch"></i>');
-            $('[aria-controls="splide01-slide06"]').append('<i class="bi bi-geo-alt-fill"></i>');
-            $('[aria-controls="splide01-slide07"]').append('<i class="bi bi-images"></i>');
-            $('[aria-controls="splide01-slide08"]').append('<i class="bi bi-chat-dots-fill"></i>');
-            $('[aria-controls="splide01-slide09"]').append('<i class="bi bi-gift-fill"></i>');
-            $('[aria-controls="splide01-slide10"]').append('<i class="bi bi-info-circle-fill"></i>');
+            $('[aria-controls="splide01-slide01"]').append('<i class="bi bi-envelope-open-fill"></i><p class="small mb-0">opening</p>');
+            $('[aria-controls="splide01-slide02"]').append('<i class="bi bi-chat-quote-fill"></i><p class="small mb-0">quotes</p>');
+            $('[aria-controls="splide01-slide03"]').append('<i class="bi bi-chat-square-dots-fill"></i><p class="small mb-0">salam</p>');
+            $('[aria-controls="splide01-slide04"]').append('<i class="bi bi-arrow-through-heart-fill"></i><p class="small mb-0">mempelai</p>');
+            $('[aria-controls="splide01-slide05"]').append('<i class="bi bi-smartwatch"><p class="small mb-0">acara</p></i>');
+            $('[aria-controls="splide01-slide06"]').append('<i class="bi bi-geo-alt-fill"></i><p class="small mb-0">maps</p>');
+            $('[aria-controls="splide01-slide07"]').append('<i class="bi bi-images"></i><p class="small mb-0">gallery</p>');
+            $('[aria-controls="splide01-slide08"]').append('<i class="bi bi-chat-dots-fill"></i><p class="small mb-0">rsvp</p>');
+            $('[aria-controls="splide01-slide09"]').append('<i class="bi bi-gift-fill"></i><p class="small mb-0">gift</p>');
+            $('[aria-controls="splide01-slide10"]').append('<i class="bi bi-info-circle-fill"></i><p class="small mb-0">thanks</p>');
 
             //$( ".splide__andy" ).before( "<div>" );
             //$( ".splide__andy" ).after( "</div>" );
@@ -178,6 +826,66 @@
 
 
         splide.mount();
+    </script>
+
+    <script>
+        function fadeLeft() {
+            var reveals = document.querySelectorAll(".fadeLeft");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        function fadeDown() {
+            var reveals = document.querySelectorAll(".fadeDown");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        function fadeZoom() {
+            var reveals = document.querySelectorAll(".fadeZoom");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+
+        window.addEventListener("scroll", fadeLeft);
+        window.addEventListener("scroll", fadeDown);
+        window.addEventListener("scroll", fadeZoom);
+
+        // To check the scroll position on the page load
+        fadeLeft();
+        fadeDown();
+        fadeZoom();
     </script>
 
     <script>
