@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-    <link href="https://undangandigitalkami.com/themes/themes.css?v=290124" rel="stylesheet">
+    <!-- <link href="https://undangandigitalkami.com/themes/themes.css?v=290124" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -299,11 +299,14 @@
             color: #B68F58;
         }
 
-        p.gift2, .accordion-collapse {
+        p.gift2,
+        .accordion-collapse {
             font-size: 14.4px;
             font-family: "Gabriela", serif;
             color: #1F3D28;
         }
+
+
 
         /* rsvp */
 
@@ -314,20 +317,21 @@
         }
 
         p.rsvp2,
-        p.rsvp3, p.rsvp4 {
+        p.rsvp3,
+        p.rsvp4 {
             font-family: "Gabriela", serif;
             color: #1F3D28;
             font-size: 1rem;
         }
 
-        p.rsvp4{
-            font-size:0.8rem;
+        p.rsvp4 {
+            font-size: 0.8rem;
         }
 
 
 
 
-        .frame,
+        /* .frame,
         .frame-tl {
             left: 0;
             position: absolute;
@@ -348,7 +352,7 @@
             bottom: 0;
             position: absolute;
             right: 0;
-        }
+        } */
 
         .kpd_opening,
         .tamu_opening {
@@ -365,6 +369,51 @@
 
         .show {
             display: flex;
+        }
+
+
+        /* undangan */
+        .frame {
+            bottom: 0;
+            right: 0
+        }
+
+        .frame,
+        .frame-tl {
+            left: 0;
+            position: absolute;
+            top: 0
+        }
+
+        .frame-tl {
+            width: 50%
+        }
+
+        .frame-tr {
+            right: 0;
+            top: 0
+        }
+
+        .frame-bl,
+        .frame-tr {
+            position: absolute;
+            width: 50%
+        }
+
+        .frame-bl {
+            bottom: 0;
+            left: 0
+        }
+
+        .frame-br {
+            width: 50%
+        }
+
+        .embed-video iframe,
+        .frame-br {
+            bottom: 0;
+            position: absolute;
+            right: 0
         }
     </style>
 </head>
@@ -633,16 +682,22 @@
                             </div>
 
                             <div class="container rsvp mx-auto text-center">
-                                <p class="rsvp">Do'a Untuk Pengantin</p>
-                                <p class="rsvp2">"Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu
+                                <p class="rsvp slideDown">Do'a Untuk Pengantin</p>
+                                <p class="rsvp2 slideDown">"Semoga Allah memberkahimu di waktu bahagia dan memberkahimu
+                                    di waktu
                                     susah, dan mengumpulkan kalian berdua dalam kebaikan"</p>
                                 <p class="rsvp3">Tekan tombol dibawah ini untuk mengirim ucapan dan konfirmasi kehadiran
                                 </p>
 
-                                <button class="btn btn-light">Konfirmasi & Kirim Ucapan</button>
+                                <button type="button" class="btn btn-light slideUp" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Konfirmasi & Kirim Ucapan</button>
 
-                                <p class="rsvp4 mt-3">Batas akhir konfirmasi<br>25 November 2023</p>
+                                <p class="rsvp4 mt-3 slideUp">Batas akhir konfirmasi<br>25 November 2023</p>
                             </div>
+
+
+
+
 
 
                         </section>
@@ -681,8 +736,8 @@
                                         </h2>
                                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">Atas Nama : <strong>[NAMA ANDA]</strong><br />
-                                                No Hp : <strong>[NO HP]</strong></div>
+                                            <div class="accordion-body">Atas Nama : <strong>[Nama Anda]</strong><br />
+                                                No Rekening : <strong>[No Rekening]</strong></div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
@@ -695,8 +750,8 @@
                                         </h2>
                                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">Atas Nama : <strong>[NAMA ANDA]</strong><br />
-                                                No Hp : <strong>[NO HP]</strong></div>
+                                            <div class="accordion-body">Atas Nama : <strong>[Nama Anda]</strong><br />
+                                                No Rekening : <strong>[No Rekening]</strong></div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
@@ -709,8 +764,8 @@
                                         </h2>
                                         <div id="flush-collapseThree" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">Atas Nama : <strong>[NAMA ANDA]</strong><br />
-                                                No Hp : <strong>[NO HP]</strong></div>
+                                            <div class="accordion-body">Atas Nama : <strong>[Nama Anda]</strong><br />
+                                                No Hp : <strong>[No Hp]</strong></div>
                                         </div>
                                     </div>
                                 </div>
@@ -749,6 +804,102 @@
             </div>
         </section>
 
+
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi & Ucapan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="ucapan">
+                        <input type="number" value="0" id="replyUcapan" hidden="">
+                        <div class="mb-3">
+                            <input name="nama" type="text" class="form-control" placeholder="Nama" required="">
+                        </div>
+                        <div class="my-3">
+                            <select name="hadir" class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                required="">
+                                <option value="">-Konfirmasi Kehadiran-</option>
+                                <option value="2">Bersama Partner</option>
+                                <option value="1">Sendiri</option>
+                                <option value="0">Tidak Hadir</option>
+                            </select>
+                        </div>
+                        
+                        <hr>
+                        <div class="mb-3">
+                            <textarea name="pesan" class="form-control" rows="3" placeholder="Ucapan"
+                                required=""></textarea>
+                        </div>
+
+                    </form>
+
+
+                    <button type="button" id="batalReply" class="btn btn-light" style="display: none;">Reset</button>
+                    <button type="button" id="submitUcapan" class="btn btn-primary">Kirim</button>
+
+                    <hr>
+
+                    <div id="putPesan" style="max-height: 200px;overflow: scroll;">
+                        <div class="d-flex flex-row">
+                            <div class="me-2"><img
+                                    src="https://to.titipanpesan.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-01-at-08.34.09.jpg"
+                                    class="rounded-circle border" style="width:37px;"></div>
+                            <div><span class="text-dark fw-bold">Zaskia</span><span
+                                    class="ms-2 badge text-bg-success">Hadir</span>
+                                <p class="text-muted my-1" style="font-size:12px">2023-09-28 15:33:33</p>
+                                <p class="text-break mb-1" style="font-size:14px">selamat</p>
+                                <p class="text-muted reply" style="font-size:12px" onclick="replyto(38,'Zaskia')"><i
+                                        class="fa-solid fa-pencil"></i> Reply</p>
+                            </div>
+                        </div>
+                        <div id="reply38"></div>
+                        <div class="d-flex flex-row">
+                            <div class="me-2"><img
+                                    src="https://to.titipanpesan.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-01-at-08.34.09.jpg"
+                                    class="rounded-circle border" style="width:37px;"></div>
+                            <div><span class="text-dark fw-bold">Stephanie</span><span
+                                    class="ms-2 badge text-bg-success">Hadir</span>
+                                <p class="text-muted my-1" style="font-size:12px">2023-09-28 16:38:04</p>
+                                <p class="text-break mb-1" style="font-size:14px">Langgeng terus yah</p>
+                                <p class="text-muted reply" style="font-size:12px" onclick="replyto(40,'Stephanie')"><i
+                                        class="fa-solid fa-pencil"></i> Reply</p>
+                            </div>
+                        </div>
+                        <div id="reply40"></div>
+                        <div class="d-flex flex-row">
+                            <div class="me-2"><img
+                                    src="https://to.titipanpesan.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-01-at-08.34.09.jpg"
+                                    class="rounded-circle border" style="width:37px;"></div>
+                            <div><span class="text-dark fw-bold">Farsha</span><span
+                                    class="ms-2 badge text-bg-secondary">Tidak Hadir</span>
+                                <p class="text-muted my-1" style="font-size:12px">2023-09-28 16:51:11</p>
+                                <p class="text-break mb-1" style="font-size:14px">Longlast beib</p>
+                                <p class="text-muted reply" style="font-size:12px" onclick="replyto(41,'Farsha')"><i
+                                        class="fa-solid fa-pencil"></i> Reply</p>
+                            </div>
+                        </div>
+                        <div id="reply41"></div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary pull-left" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
