@@ -281,13 +281,13 @@
 
         /* Gift */
 
-        p.gift{
+        p.gift {
             font-size: 28.8px;
             font-family: "MonteCarlo", cursive;
             color: #B68F58;
         }
 
-        p.gift2{
+        p.gift2 {
             font-size: 14.4px;
             font-family: "Gabriela", serif;
             color: #1F3D28;
@@ -615,7 +615,58 @@
 
                             <div class="container gift mx-auto text-center">
                                 <p class="gift slideDown">Tanda Kasih</p>
-                                <p class="gift2 slideUp">Terima kasih telah menambah semangat kegembiraan pernikahan kami dengan kehadiran dan hadiah indah Anda.</p>
+                                <p class="gift2 slideUp">Terima kasih telah menambah semangat kegembiraan pernikahan
+                                    kami dengan kehadiran dan hadiah indah Anda.</p>
+
+                                <button class="btn btn-light slideUp" onclick="toogleCashless()"><i
+                                        class="bi bi-gift-fill"></i> Cashless</button>
+
+
+                                <div class="accordion accordion-flush text-start mb-3" id="mycashless" style="display:none;">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                                Bank 1
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">Atas Nama : <strong>[NAMA ANDA]</strong><br />
+                                                No Hp : <strong>[NO HP]</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                                aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                Bank 2
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">Atas Nama : <strong>[NAMA ANDA]</strong><br />
+                                                No Hp : <strong>[NO HP]</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                                aria-expanded="false" aria-controls="flush-collapseThree">
+                                                E-Money
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">Atas Nama : <strong>[NAMA ANDA]</strong><br />
+                                                No Hp : <strong>[NO HP]</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </section>
@@ -828,65 +879,7 @@
         splide.mount();
     </script>
 
-    <script>
-        function fadeLeft() {
-            var reveals = document.querySelectorAll(".fadeLeft");
 
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                } else {
-                    reveals[i].classList.remove("active");
-                }
-            }
-        }
-
-        function fadeDown() {
-            var reveals = document.querySelectorAll(".fadeDown");
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                } else {
-                    reveals[i].classList.remove("active");
-                }
-            }
-        }
-
-        function fadeZoom() {
-            var reveals = document.querySelectorAll(".fadeZoom");
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                } else {
-                    reveals[i].classList.remove("active");
-                }
-            }
-        }
-
-
-        window.addEventListener("scroll", fadeLeft);
-        window.addEventListener("scroll", fadeDown);
-        window.addEventListener("scroll", fadeZoom);
-
-        // To check the scroll position on the page load
-        fadeLeft();
-        fadeDown();
-        fadeZoom();
-    </script>
 
     <script>
         var w = window.innerWidth;
@@ -896,6 +889,19 @@
         var wx = w / 4;
         $(".splide__pagination li").css("width", wx + "px");
         $(".splide__andy").css("width", (wx * 10) + "px");
+
+        var cashless = false;
+        function toogleCashless() {
+
+            if (cashless == false) {
+                $('#mycashless').show();
+                cashless = true;
+            } else {
+                $('#mycashless').hide();
+                cashless = false;
+            }
+
+        }
 
     </script>
 </body>
