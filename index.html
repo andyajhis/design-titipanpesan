@@ -419,7 +419,7 @@
 </head>
 
 <body>
-    <div class="wrapper mx-auto" style="max-width: 500px;overflow: hidden;">
+    <div class="wrapper mx-auto" id="luxy" style="max-width: 500px;overflow: hidden;">
 
         <section class="splide" aria-label="Splide Basic HTML Example">
             <div class="splide__track w-100 bg-dark text-light">
@@ -663,7 +663,25 @@
 
                             <div class="container gallery mx-auto text-center">
                                 <p class="gallery">Our Memories</p>
-                            </div>
+
+                                <div class="grid">
+                                    <div class="grid-item"><a data-fslightbox="gallery"
+                                            href="https://placehold.co/230x230?text=Gallery"><img
+                                                src="https://placehold.co/230x230?text=Gallery"></a>
+                                    </div>
+                                    <div class="grid-item"><a data-fslightbox="gallery"
+                                            href="https://placehold.co/230x230?text=Gallery"><img
+                                                src="https://placehold.co/230x230?text=Gallery"></a>
+                                    </div>
+                                    <div class="grid-item"><a data-fslightbox="gallery"
+                                            href="https://placehold.co/230x230?text=Gallery"><img
+                                                src="https://placehold.co/230x230?text=Gallery"></a>
+                                    </div>
+                                    <div class="grid-item"><a data-fslightbox="gallery"
+                                            href="https://placehold.co/230x230?text=Gallery"><img
+                                                src="https://placehold.co/230x230?text=Gallery"></a>
+                                    </div>
+                                </div>
 
 
                         </section>
@@ -833,7 +851,7 @@
                                 <option value="0">Tidak Hadir</option>
                             </select>
                         </div>
-                        
+
                         <hr>
                         <div class="mb-3">
                             <textarea name="pesan" class="form-control" rows="3" placeholder="Ucapan"
@@ -911,6 +929,8 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="assets/fslightbox/fslightbox.js"></script>
+    <script src="assets/masonry/masonry.pkgd.min.js"></script>
     <script>
 
         var w = window.innerWidth;
@@ -1104,7 +1124,29 @@
 
         }
 
+        // -- Gallery
+        $(window).load(function () {
+            // this will fire after the entire page is loaded, including images
+
+
+            //hide loader
+            // $('#loader').hide();
+            $('#luxy').show("fast", function masonary() {
+                $('.grid').masonry({
+                    // options
+                    itemSelector: '.grid-item',
+                    gutter: 5,
+                });
+            });
+        });
+
+
+        // -- End Gallery
+
     </script>
+
+
+
 </body>
 
 </html>
