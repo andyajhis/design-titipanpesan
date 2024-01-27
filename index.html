@@ -209,6 +209,23 @@
             font-size: 28.8px;
         }
 
+        .grid {
+            margin: 0 auto 5px auto;
+        }
+
+        .grid-item {
+            width: 32%;
+            margin-bottom: 5px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            border: 2px solid #35673a;
+        }
+
+
+
+
         /* thanks */
 
         p.thanks {
@@ -682,6 +699,7 @@
                                                 src="https://placehold.co/230x230?text=Gallery"></a>
                                     </div>
                                 </div>
+                            </div>
 
 
                         </section>
@@ -930,7 +948,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="assets/fslightbox/fslightbox.js"></script>
-    <script src="assets/masonry/masonry.pkgd.min.js"></script>
+    <!-- <script src="assets/masonry/masonry.pkgd.min.js"></script> -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script>
 
         var w = window.innerWidth;
@@ -1043,6 +1062,8 @@
 
 
             splide.on('move', function (mv) {
+                setTimeout(loadMasonry, 500);
+
                 // do something
                 var w = window.innerWidth;
                 if (w > 500) {
@@ -1124,24 +1145,16 @@
 
         }
 
-        // -- Gallery
-        $(window).load(function () {
-            // this will fire after the entire page is loaded, including images
 
-
-            //hide loader
-            // $('#loader').hide();
-            $('#luxy').show("fast", function masonary() {
-                $('.grid').masonry({
-                    // options
-                    itemSelector: '.grid-item',
-                    gutter: 5,
-                });
+        function loadMasonry() {
+            $('.grid').masonry({
+                // options
+                itemSelector: '.grid-item',
+                gutter: 5,
             });
-        });
+        }
 
 
-        // -- End Gallery
 
     </script>
 
