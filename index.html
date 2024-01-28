@@ -17,9 +17,17 @@
         href="https://fonts.googleapis.com/css2?family=Gabriela&family=Mr+Dafoe&family=MonteCarlo&family=Vidaloka&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- our project just needs Font Awesome Solid + Brands -->
+    <link href="assets/fontawesome-free-6.4.0-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fontawesome-free-6.4.0-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fontawesome-free-6.4.0-web/css/solid.css" rel="stylesheet">
     <style>
         body {
             overflow: hidden;
+        }
+
+        button.splide__arrow.splide__arrow--prev {
+            display: none;
         }
 
 
@@ -431,6 +439,47 @@
             position: absolute;
             right: 0
         }
+
+        .putarMusik {
+            z-index: 999;
+            width: 500px;
+            max-width: 100%;
+            margin-bottom: 90px;
+            padding-right: 10px;
+            color: #213e1a;
+        }
+
+        #myaudio-on {
+            font-size: 2.5rem;
+            -moz-animation: animaputar 2s infinite linear;
+            -webkit-animation: animaputar 2s infinite linear;
+        }
+
+        #myaudio-off {
+            font-size: 2.5rem;
+            -moz-animation: animaputar 2s infinite linear;
+            -webkit-animation: animaputar 2s infinite linear;
+        }
+
+        @-moz-keyframes animaputar {
+            0% {
+                -moz-transform: rotate(-360deg);
+            }
+
+            100% {
+                -moz-transform: rotate(0deg);
+            }
+        }
+
+        @-webkit-keyframes animaputar {
+            0% {
+                -webkit-transform: rotate(-360deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(0deg);
+            }
+        }
     </style>
 </head>
 
@@ -466,9 +515,10 @@
                                 <p class="mt-1 mb-0 kpd_opening slideUp">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
                                 <h5 class="tamu_opening slideUp"><strong>Namu Tamu</strong></h5>
 
-                                <button
-                                    class="btn btn-light mt-3 animate__animated animate__infinite infinite animate__pulse">Open
-                                    Invitation <i class="bi bi-chevron-down"></i></button>
+                                <button onclick="openInvitation()"
+                                    class="btn btn-light mt-3 animate__animated animate__infinite infinite animate__pulse">
+                                    Open Invitation <i class="bi bi-chevron-down"></i>
+                                </button>
                             </div>
                         </section>
 
@@ -681,7 +731,8 @@
                                 <p class="gallery">Our Memories</p>
 
                                 <div class="ratio ratio-16x9 mb-2">
-                                    <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/Jgod5t2VmVA"></iframe>
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/Jgod5t2VmVA"></iframe>
                                 </div>
 
                                 <div class="grid">
@@ -695,21 +746,24 @@
                                     </div>
                                     <div class="grid-item">
                                         <div class="text-center mx-auto p-1">
-                                            <a data-fslightbox="gallery" href="https://placehold.co/230x230?text=Gallery">
+                                            <a data-fslightbox="gallery"
+                                                href="https://placehold.co/230x230?text=Gallery">
                                                 <img src="https://placehold.co/230x230?text=Gallery">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="text-center mx-auto p-1">
-                                            <a data-fslightbox="gallery" href="https://placehold.co/230x230?text=Gallery">
+                                            <a data-fslightbox="gallery"
+                                                href="https://placehold.co/230x230?text=Gallery">
                                                 <img src="https://placehold.co/230x230?text=Gallery">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="text-center mx-auto p-1">
-                                            <a data-fslightbox="gallery" href="https://placehold.co/230x230?text=Gallery">
+                                            <a data-fslightbox="gallery"
+                                                href="https://placehold.co/230x230?text=Gallery">
                                                 <img src="https://placehold.co/230x230?text=Gallery">
                                             </a>
                                         </div>
@@ -725,21 +779,24 @@
                                     </div>
                                     <div class="grid-item">
                                         <div class="text-center mx-auto p-1">
-                                            <a data-fslightbox="gallery" href="https://placehold.co/230x230?text=Gallery">
+                                            <a data-fslightbox="gallery"
+                                                href="https://placehold.co/230x230?text=Gallery">
                                                 <img src="https://placehold.co/230x230?text=Gallery">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="text-center mx-auto p-1">
-                                            <a data-fslightbox="gallery" href="https://placehold.co/230x230?text=Gallery">
+                                            <a data-fslightbox="gallery"
+                                                href="https://placehold.co/230x230?text=Gallery">
                                                 <img src="https://placehold.co/230x230?text=Gallery">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="text-center mx-auto p-1">
-                                            <a data-fslightbox="gallery" href="https://placehold.co/230x230?text=Gallery">
+                                            <a data-fslightbox="gallery"
+                                                href="https://placehold.co/230x230?text=Gallery">
                                                 <img src="https://placehold.co/230x230?text=Gallery">
                                             </a>
                                         </div>
@@ -802,12 +859,13 @@
                                 <p class="gift2 slideUp">Terima kasih telah menambah semangat kegembiraan pernikahan
                                     kami dengan kehadiran dan hadiah indah Anda.</p>
 
-                                <button class="btn btn-light slideUp" onclick="toogleCashless()"><i
-                                        class="bi bi-gift-fill"></i> Cashless</button>
+                                <button class="btn btn-light slideUp" onclick="toogleCashless()" id="bGift">
+                                    <i class="bi bi-gift-fill"></i> Cashless <small>[open]</small>
+                                </button>
 
 
                                 <div class="accordion accordion-flush text-start mt-3" id="mycashless"
-                                    style="display:none;">
+                                    style="display: none;">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
@@ -817,7 +875,7 @@
                                             </button>
                                         </h2>
                                         <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionFlushExample">
+                                            data-bs-parent="#mycashless">
                                             <div class="accordion-body">Atas Nama : <strong>[Nama Anda]</strong><br />
                                                 No Rekening : <strong>[No Rekening]</strong></div>
                                         </div>
@@ -831,7 +889,7 @@
                                             </button>
                                         </h2>
                                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionFlushExample">
+                                            data-bs-parent="#mycashless">
                                             <div class="accordion-body">Atas Nama : <strong>[Nama Anda]</strong><br />
                                                 No Rekening : <strong>[No Rekening]</strong></div>
                                         </div>
@@ -845,7 +903,7 @@
                                             </button>
                                         </h2>
                                         <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionFlushExample">
+                                            data-bs-parent="#mycashless">
                                             <div class="accordion-body">Atas Nama : <strong>[Nama Anda]</strong><br />
                                                 No Hp : <strong>[No Hp]</strong></div>
                                         </div>
@@ -887,6 +945,16 @@
         </section>
 
 
+        <div class="position-fixed bottom-0 putarMusik">
+            <div style="float: right;">
+                <span id="aon" style="display:none;">
+                    <i class="fa-solid fa-compact-disc" id="myaudio-on" onclick="pauseAudio()"></i>
+                </span>
+                <span id="aof">
+                    <i class="fa-solid fa-circle-pause" id="myaudio-off" onclick="playAudio()"></i>
+                </span>
+            </div>
+        </div>
 
     </div>
 
@@ -985,6 +1053,14 @@
     </div>
 
 
+    <audio id="audioku" hidden loop>
+        <source src="assets/tema/audio/NYAMAN-30-1.mp3" type="audio/mp3">
+    </audio>
+
+
+
+
+
 
 
 
@@ -997,6 +1073,34 @@
     <!-- <script src="assets/masonry/masonry.pkgd.min.js"></script> -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script>
+
+        // -- Audio
+        var el = document.getElementById("audioku");
+        function playAudio() {
+            el.play();
+            $('#aon').show();
+            $('#aof').hide();
+        }
+
+        function pauseAudio() {
+            el.pause();
+            
+            $('#aon').hide();
+            $('#aof').show();
+        }
+
+        $('#myaudio-on').on("click", function (event) {
+            $('#aon').hide();
+            $('#aof').show();
+        });
+
+        $('#myaudio-off').on("click", function (event) {
+            $('#aon').show();
+            $('#aof').hide();
+        });
+
+        // -- End Audio
+        
 
         var w = window.innerWidth;
         if (w > 500) {
@@ -1013,6 +1117,8 @@
             scroll: true,
             wheelSleep: 0,
         });
+
+
 
         splide.on('active', function (e) {
             const layar = document.querySelectorAll('.tengahlayar');
@@ -1096,9 +1202,6 @@
             fbr[e.index].classList.remove('animate__animated', 'animate__fadeInBottomRight');
 
 
-
-
-
         });
 
         splide.on('pagination:mounted', function (data) {
@@ -1109,7 +1212,6 @@
 
             splide.on('move', function (mv) {
                 setTimeout(loadMasonry, 500);
-
                 // do something
                 var w = window.innerWidth;
                 if (w > 500) {
@@ -1121,6 +1223,7 @@
 
                 if (mv == 0) {
                     $('.splide__andy').css("left", "0px");
+
                 } else if (mv == 1) {
                     $('.splide__andy').css("left", "0px");
                 } else if (mv == 2) {
@@ -1159,12 +1262,13 @@
 
         });
 
-
-
-
-
-
         splide.mount();
+
+        function openInvitation() {
+            splide.go(1);
+            playAudio();
+        }
+
     </script>
 
 
@@ -1183,12 +1287,24 @@
 
             if (cashless == false) {
                 $('#mycashless').show();
+                const accordionGift = document.querySelectorAll('#mycashless');
+                accordionGift[0].classList.remove('animate__animated', 'animate__fadeOutDown');
+                accordionGift[0].classList.add('animate__animated', 'animate__fadeInUp');
                 cashless = true;
+                $("#bGift").html('<i class="bi bi-gift-fill"></i> Cashless <small>[close]</small>');
             } else {
-                $('#mycashless').hide();
+                const accordionGift = document.querySelectorAll('#mycashless');
+                accordionGift[0].classList.remove('animate__animated', 'animate__fadeInUp');
+                accordionGift[0].classList.add('animate__animated', 'animate__fadeOutDown');
+                setTimeout(hidemyGift, 500);
                 cashless = false;
+                $("#bGift").html('<i class="bi bi-gift-fill"></i> Cashless <small>[open]</small>');
             }
 
+        }
+
+        function hidemyGift() {
+            $('#mycashless').hide();
         }
 
 
@@ -1199,7 +1315,6 @@
                 gutter: 0,
             });
         }
-
 
 
     </script>
